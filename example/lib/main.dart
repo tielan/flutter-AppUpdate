@@ -22,7 +22,10 @@ class _MyAppState extends State<MyApp> {
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-      Appupdate.check();
+      String version = await Appupdate.getAppVersion;
+      int  versionCode = await Appupdate.getVersionCode;
+      //version="+version+"&versionCode="+versionCode
+      Appupdate.check('https://pmall.52pht.com/index.php/api?method=app.update&format=json&v=v1&');
     // If the widget was removed from the tree while the asynchronous platform
     // message was in flight, we want to discard the reply rather than calling
     // setState to update our non-existent appearance.
