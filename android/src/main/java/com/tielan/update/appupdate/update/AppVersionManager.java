@@ -2,6 +2,7 @@ package com.tielan.update.appupdate.update;
 
 import android.app.Activity;
 
+import com.tielan.update.appupdate.utils.APKVersionCodeUtils;
 import com.vector.update_app.UpdateAppManager;
 
 /**
@@ -11,6 +12,7 @@ import com.vector.update_app.UpdateAppManager;
 public class AppVersionManager {
 
     public static boolean check(Activity mContext,String updateUrl){
+        AppUpdateCallback.setAppVersion(APKVersionCodeUtils.getVerName(mContext));
         new UpdateAppManager
                 .Builder()
                 //当前Activity

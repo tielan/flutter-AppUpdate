@@ -6,3 +6,6 @@
 pubspec.lock
 
 build/
+example/build/
+example/android/.gradle
+example/android/.idea
